@@ -9,13 +9,16 @@ body{
     background-image: url('../components/imgs/bck.jpg');
     
 }
+.Bimage{
+    opacity: 0.6;
+}
 #main-wrapper{
 	
 	background-color: rgba(0,0,0,0.8);
 	border: 3px solid #333333;
 	width: 600px;
-	margin-top: 50px;
-	margin-left: 250px;
+	margin-top: 20px;
+	margin-left: 220px;
 	color: #d0e4eb
 }
 .header {

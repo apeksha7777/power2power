@@ -8,9 +8,17 @@ class App extends Component {
 
   async componentWillMount(){
     await this.loadweb3();
-   // await this.loadblockchaindata();
+    await this.loadblockchaindata();
     
   }
+  constructor(props)
+{
+  super(props);
+  this.state={
+    account:'',
+  }
+ 
+}
   async loadweb3()
   {
     if (window.ethereum) {
@@ -28,12 +36,14 @@ class App extends Component {
  async loadblockchaindata(){
   const web3=window.web3;
   const accounts=await web3.eth.getAccounts();
+  
+  this.setState({account:accounts[0]});
  }
 
   render() {
     return (
       <div>
-     
+     {/* <p>{this.state.account}</p> */}
 
       <Main></Main>
     
