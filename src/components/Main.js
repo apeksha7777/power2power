@@ -37,13 +37,13 @@ class Main extends Component {
         <div id="main-wrapper" >
             <div class="inner_container">
              
-                <label htmlFor="surplus">Enter surplus in units</label>
-                <input type="number" id="surplus" name="name" rows="1" cols="10"></input>
-                <button class="back_btn" id="surplusButton">GO</button>
+                <label htmlFor="surplus">Sell surplus units</label>
+                <input type="number" placeholder="units" id="surplus" name="name" rows="1" cols="10"></input>
+                <button class="back_btn" id="surplusButton">SELL</button>
                 <br></br>
                 <label htmlFor="request">Buy units</label>
-                <input type="number" id="Buy" name="buyunits" rows="1" cols="10"></input>
-                <button class="back_btn" id="BuyEnergy">GO</button>
+                <input type="number" placeholder="units" id="Buy" name="buyunits" rows="1" cols="10"></input>
+                <button class="back_btn" id="BuyEnergy">BUY</button>
            
             </div>
         </div>

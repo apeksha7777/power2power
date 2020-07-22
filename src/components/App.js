@@ -43,7 +43,7 @@ class App extends Component {
   render() {
     return (
       <div>
-     {/* <p>{this.state.account}</p> */}
+    
 
       <Main
       acc={this.state.account} />
