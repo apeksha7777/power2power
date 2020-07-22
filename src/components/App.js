@@ -18,6 +18,7 @@ class App extends Component {
     account:'',
   }
  
+  
 }
   async loadweb3()
   {
@@ -36,7 +37,6 @@ class App extends Component {
  async loadblockchaindata(){
   const web3=window.web3;
   const accounts=await web3.eth.getAccounts();
-  
   this.setState({account:accounts[0]});
  }
 
@@ -45,7 +45,8 @@ class App extends Component {
       <div>
      {/* <p>{this.state.account}</p> */}
 
-      <Main></Main>
+      <Main
+      acc={this.state.account} />
     
       </div>
     

@@ -21,6 +21,24 @@ body{
 	margin-left: 220px;
 	color: #d0e4eb
 }
+#energy{
+	
+	background-color: rgba(0,0,0,0.8);
+	border: 3px solid #333333;
+	width: 300px;
+	margin-top: 20px;
+	margin-left: 20px;
+	color: #d0e4eb
+}
+#balance{
+    
+	background-color: rgba(0,0,0,0.8);
+	border: 3px solid #333333;
+	width: 300px;
+	margin-top: -40px;
+	margin-left: 580px;
+	color: #d0e4eb
+}
 .header {
     font-family: "Times New Roman", Times, serif;
     padding: 20px;
