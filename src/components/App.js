@@ -16,6 +16,7 @@ class App extends Component {
   super(props);
   this.state={
     account:'',
+    accountBalance:'',
   }
  
   
@@ -38,15 +39,22 @@ class App extends Component {
   const web3=window.web3;
   const accounts=await web3.eth.getAccounts();
   this.setState({account:accounts[0]});
+  const bal=await web3.eth.getBalance(this.state.account);
+  const ethbal=window.web3.utils.fromWei(bal.toString(),'Ether');
+  console.log(ethbal);
+  this.setState({accountBalance:ethbal});
+  //console.log(bal);
  }
 
   render() {
     return (
       <div>
     
-
+    
       <Main
-      acc={this.state.account} />
+      acc={this.state.account} 
+      accBalance={this.state.accountBalance}
+      />
     
       </div>
     

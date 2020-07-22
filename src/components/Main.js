@@ -27,11 +27,12 @@ class Main extends Component {
         <div id="energy" >
             <p>Units of energy</p>
             
-            {/* <p>{this.props.acc}</p> */}
+           
             
         </div>
         <div id="balance">
             <p>Account balance</p>
+            {this.props.accBalance}
         </div>
         
         <div id="main-wrapper" >
