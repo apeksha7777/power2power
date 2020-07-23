@@ -27,6 +27,8 @@ class Main extends Component {
         <div id="energy" >
             <p>Units of energy</p>
             
+            {this.props.userEnergy}
+            
            
             
         </div>
@@ -44,7 +46,13 @@ class Main extends Component {
                 <br></br>
                 <label htmlFor="request">Buy units</label>
                 <input type="number" placeholder="units" id="Buy" name="buyunits" rows="1" cols="10"></input>
-                <button class="back_btn" id="BuyEnergy">BUY</button>
+                <button class="back_btn" id="BuyEnergy" 
+                 onClick={(event)=>{
+                    console.log("buy button clicked") 
+                    
+                     this.props.requestEnergy(document.getElementById('Buy').value);
+                }}
+                >BUY</button>
            
             </div>
         </div>

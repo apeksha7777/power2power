@@ -1382,12 +1382,12 @@
     "5777": {
       "events": {},
       "links": {},
-      "address": "0x26D44203783AB801317d6Ca7CA0bDe243eF33494",
-      "transactionHash": "0x8424191290838333303b023946e7fa2a75bd4f718531745377b8e2e48d01bc27"
+      "address": "0x23Af58d0086b74FD63A8e39636A5c860Ab6c0b92",
+      "transactionHash": "0x48adc4fbbbc5dc6ee37bb7836617a811b05a871904de676ae3e3bdddb4d3fa8b"
     }
   },
   "schemaVersion": "3.0.6",
-  "updatedAt": "2020-07-22T17:44:21.996Z",
+  "updatedAt": "2020-07-23T11:16:15.240Z",
   "devdoc": {
     "methods": {}
   },

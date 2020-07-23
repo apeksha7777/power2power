@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from '../logo.png';
 import './App.css';
 import Web3 from 'web3';
+import Power from '../abis/Power.json';
 import Main from '../components/Main.js';
 
 class App extends Component {
@@ -17,8 +18,9 @@ class App extends Component {
   this.state={
     account:'',
     accountBalance:'',
+    userEnergy:'',
   }
- 
+  this.requestEnergy = this.requestEnergy.bind(this);
   
 }
   async loadweb3()
@@ -33,6 +35,8 @@ class App extends Component {
     else {
     console.log('Non-Ethereum browser detected. You should consider trying MetaMask!');
     }
+
+   
  }
 
  async loadblockchaindata(){
@@ -43,8 +47,31 @@ class App extends Component {
   const ethbal=window.web3.utils.fromWei(bal.toString(),'Ether');
   console.log(ethbal);
   this.setState({accountBalance:ethbal});
-  //console.log(bal);
+ 
+ 
+  const abi=Power.abi;
+  const networkid=await web3.eth.getId();
+  const networkdata=Power.networks[networkid];
+  if(networkdata)
+   {
+    const address=networkdata.address;
+    const power=web3.eth.Contract(abi,address);
+    console.log(power);
+    this.setState({power});
+
+    await this.state.power.methods.userJoined().call();
+    const energyAvailable=await this.state.power.methods.retrieveEnergy().call();
+    console.log(energyAvailable.toString());
+    this.setState({userEnergy:energyAvailable.toString()});
+   }
+ 
  }
+
+requestEnergy(units)
+{
+  this.state.power.methods.requestEnergy(units).send({ from: this.state.account, value: units });
+}
+
 
   render() {
     return (
@@ -54,6 +81,8 @@ class App extends Component {
       <Main
       acc={this.state.account} 
       accBalance={this.state.accountBalance}
+      userEnergy={this.state.userEnergy}
+      requestEnergy={this.requestEnergy}
       />
     
       </div>
